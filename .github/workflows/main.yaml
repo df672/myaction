@@ -27,6 +27,12 @@ jobs:
           echo '  done' >> random_commit.sh
           echo 'fi' >> random_commit.sh
           chmod +x random_commit.sh
+          # 创建或更新时间戳文件
+          TIMESTAMP_FILE="README.md"
+          CURRENT_TIME=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          echo "Last updated: $CURRENT_TIME" > "$TIMESTAMP_FILE"
+          echo "Updated by GitHub Actions workflow" >> "$TIMESTAMP_FILE"
+          
 
       - name: Auto commit with random number
         run: |
