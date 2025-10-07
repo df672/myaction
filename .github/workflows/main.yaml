@@ -7,7 +7,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "45 * * * *" # 每天的 0:00 执行
+    - cron: "54 * * * *" # 每天的 0:00 执行
 
 jobs:
   autogreen:
@@ -28,7 +28,6 @@ jobs:
           echo 'fi' >> random_commit.sh
           chmod +x random_commit.sh
           
-
       - name: Auto commit with random number
         run: |
           git config --local user.email "df672fwae2@outlook.com"  # 设置邮箱地址
